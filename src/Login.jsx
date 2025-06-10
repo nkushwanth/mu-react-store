@@ -5,7 +5,7 @@ import { AppContext } from "./App";
 
 
 export default function Login() {
-  const {user,setUser} = useContext(AppContext);
+  const {user,setUser,users} = useContext(AppContext);
 
   const handlesubmit =() =>{
     console.log(user.name);

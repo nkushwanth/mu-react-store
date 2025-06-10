@@ -4,6 +4,10 @@ import { useState } from "react";
 export default function Register() {
   const [user, setUser] = useState({});
   const [count, setCount] = useState(0);
+
+  const usedisp =() =>{
+    alert(user.name);
+  };
   const handleClick = () => {
     alert("Hello World");
   };
@@ -35,7 +39,7 @@ export default function Register() {
         />
       </p>
       <p>
-        <button>Submit</button>
+        <button onClick={usedisp}>Submit</button>
       </p>
       <hr />
       <p>

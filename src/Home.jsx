@@ -1,6 +1,10 @@
 
 import React from "react";
 import "./Home.css"
+import {AppContext} from './App'
+import {useContext} from 'react'
+const{cart,setCart} =useContext(AppContext);
+import { NavigationType, useNavigate } from "react-router-dom";
 export default function Home() {
   const products = [
     {
@@ -25,8 +29,13 @@ export default function Home() {
       imgUrl: "https://picsum.photos/id/3/300/300",
     },
   ];
-
+   const Navigate= useNavigate();
+   const buyNow=(obj) =>{
+    setCart({id:obj.id,name:obj.name,price:obj.price,desc:obj.desc,qty:1,});
+    Navigate("/Cart");
+   };
   return (
+
     <div className="App-Home-Row">
       {products.map((product) => (
         <div>
@@ -34,7 +43,7 @@ export default function Home() {
           <h2>{product.name}</h2>
           <p>{product.desc}</p>
           <h4>{product.price}</h4>
-          <p><button>Add to Cart</button></p>
+          <p><button onClick = {()=>buyNow(product)}>Buy Now</button></p>
         </div>
       ))}
     </div>

@@ -6,7 +6,9 @@ export default function Register() {
   const [count, setCount] = useState(0);
 
   const usedisp =() =>{
-    alert(user.name);
+    console.log(user.name);
+    console.log(user.email);
+    
   };
   const handleClick = () => {
     alert("Hello World");

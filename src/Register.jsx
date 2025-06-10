@@ -3,12 +3,14 @@ import { Link } from "react-router-dom";
 import { useState, useContext} from "react";
 import {AppContext} from "./App";
 export default function Register() {
-  const {user, setUser} = useContext(AppContext);
+  const {user, setUser,users,setUsers} = useContext(AppContext);
+
   const [count, setCount] = useState(0);
 
+
   const handlesubmit =() =>{
-    console.log(user.name);
-    console.log(user.email);
+    setUsers([...users, user]);
+    console.log(users)
     
   };
   const handleClick = () => {

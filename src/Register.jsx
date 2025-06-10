@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext} from "react";
+import {AppContext} from "./App";
 export default function Register() {
-  const [user, setUser] = useState({});
+  const {user, setUser} = useContext(AppContext);
   const [count, setCount] = useState(0);
 
-  const usedisp =() =>{
+  const handlesubmit =() =>{
     console.log(user.name);
     console.log(user.email);
     
@@ -41,7 +42,7 @@ export default function Register() {
         />
       </p>
       <p>
-        <button onClick={usedisp}>Submit</button>
+        <button onClick={handlesubmit}>Submit</button>
       </p>
       <hr />
       <p>
